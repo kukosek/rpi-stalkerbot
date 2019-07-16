@@ -1,0 +1,81 @@
+<html>
+<head>
+<title>Raspberry Pi - StalkerBot</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body> 
+    
+	<script src="jquery-3.4.1.min.js"></script>
+    <script src="scripts.js"></script>
+
+    <center><h1>Raspberry Pi - StalkerBot</h1></center>
+
+    <br><h5>Status: </h5><p id="status">idle</p><br>
+
+
+
+    <div class="row">
+      <div class="column left" style="background-color:#aaa;">
+        <p><p><label for="camEnabled">Camera</label>
+        <input type="checkbox" id="camEnabled" onclick="post({&quot;action&quot;:&quot;cam&quot;,&quot;param&quot;:checkBox.checked})">
+        </p>
+        <p><label for="camRotation">Cam angle (0,90,180,270):</label>
+        <input type="number" id="camRotation" name="angle"
+               min="0" max="270">
+        <button onmousedown="camRotation($('#camRotation').val())"
+        >apply</button></p>
+
+        <p><label for="camResolution">Cam resolution:</label>
+        <input type="text" id="camResolution" name="res">
+        <button onmousedown="post({&quot;action&quot;:&quot;camResolution&quot;,&quot;param&quot;:$('#camResolution').val()})"
+        >apply</button></p>
+
+        <p><label for="camFramerate">Cam framerate (1-60):</label>
+        <input type="number" id="camFramerate" name="fps"
+               min="1" max="60">
+        <button onmousedown="post({&quot;action&quot;:&quot;camFramerate&quot;,&quot;param&quot;:$('#camFramerate').val()})"
+        >apply</button></p>
+        <p>
+        
+        <br><center>
+        <button onmousedown="post({&quot;action&quot;:&quot;move&quot;,&quot;param&quot;:&quot;forward&quot;})" onmouseup="post({&quot;action&quot;:&quot;move&quot;,&quot;param&quot;:&quot;stop&quot;})" class="movebtn" ontouchstart="post({&quot;action&quot;:&quot;move&quot;,&quot;param&quot;:&quot;forward&quot;})">|</button>
+        </br></center>
+
+        <p><center>
+        <button onmousedown="post({&quot;action&quot;:&quot;move&quot;,&quot;param&quot;:&quot;left&quot;})" onmouseup="post({&quot;action&quot;:&quot;move&quot;,&quot;param&quot;:&quot;stop&quot;})" class="movebtn" ontouchstart="post({&quot;action&quot;:&quot;move&quot;,&quot;param&quot;:&quot;left&quot;})">\</button>
+        <button onmousedown="post({&quot;action&quot;:&quot;move&quot;,&quot;param&quot;:&quot;backwards&quot;})" onmouseup="post({&quot;action&quot;:&quot;move&quot;,&quot;param&quot;:&quot;stop&quot;})" class="movebtn" ontouchstart="post({&quot;action&quot;:&quot;move&quot;,&quot;param&quot;:&quot;backwards&quot;})">_</button>a
+        <button onmousedown="post({&quot;action&quot;:&quot;move&quot;,&quot;param&quot;:&quot;right&quot;})" onmouseup="post({&quot;action&quot;:&quot;move&quot;,&quot;param&quot;:&quot;stop&quot;})" class="movebtn" ontouchstart="post({&quot;action&quot;:&quot;move&quot;,&quot;param&quot;:&quot;right&quot;})">/</button>
+        </p></center>
+	    
+	    <p>
+        <button onclick="reloadFiles()">R</button>
+        <select name="fileSelect" size="number_of_options">
+        <option value="option">Reload to see files</option>
+        </select>
+	    <button onclick="post({&quot;action&quot;:&quot;runScript&quot;,&quot;param&quot;:$('select[name=fileSelect]').val()})">Run script</button>
+	    </p>
+
+
+        <p><button class="dangerbtn" onclick="shutdown(0)">SHUTDOWN PI</button>
+        <button class="dangerbtn" onclick="shutdown(1)">REBOOT PI</button></p>       
+        </p>
+      </div>
+      <div class="column right" style="background-color:#bbb;">
+        <center><img src="stream.mjpg" width="640" height="480"></center>
+				
+				<p><label for="camSetPos">Cam position:</label>
+        Y <input type="number" id="camSetPosY" name="y"
+               min="getCamPosLimit(&quot;pan&quot;,&quot;down&quot;)" max="&getCamPosLimit(&quot;pan&quot;,&quot;up&quot;)">
+				X <input type="number" id="camSetPosX" name="x"
+               min="getCamPosLimit(&quot;tilt&quot;,&quot;down&quot;)" max="&getCamPosLimit(&quot;tilt&quot;,&quot;up&quot;)">
+        <button onmousedown="post({&quot;action&quot;:&quot;camSetPos&quot;,&quot;param&quot;:$('#camSetPosX').val()+&quot;,&quot;+$('#camSetPosY').val()})"
+        >apply</button></p>
+        <p>
+
+      </div>
+    </div>
+
+
+
+    </body> 
+    </html>
