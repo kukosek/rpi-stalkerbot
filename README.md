@@ -26,6 +26,6 @@ Edit the file ```server.properties```
 ## Running it
 ```bash
 cd rpi-stalkerbot
-python3 rpi_stalkerbot_server.py
+sudo python3 rpi_stalkerbot_server.py
 ```
 Then type the IP adress of your rpi into a browser.
