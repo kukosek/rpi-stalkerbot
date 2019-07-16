@@ -7,7 +7,7 @@ A web interface that allows you to control your raspberry pi robot
   * [picamera](https://pypi.org/project/picamera/) python module
   * Working network connection
   * Raspberry pi camera (working and enabled)
-  * Two continuos rotation motors that are controllable with PWM (I am recommending [this](https://www.pololu.com/product/2820))
+  * Two continuous rotation motors that are controllable with PWM (I am recommending [this](https://www.pololu.com/product/2820))
   * ### Camera tower
     * Camera tower (I 3d printed [this](https://www.thingiverse.com/thing:1799905/remixes))
     * Two servos to control rotation of the camera tower
