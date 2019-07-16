@@ -12,14 +12,14 @@ Two servos to control rotation of the camera tower
 
 ## Installation
 On raspberry pi:
-''cd''
-''git clone https://github.com/kukosek/rpi-stalkerbot.git''
-''cd rpi-stalkerbot''
+'''cd'''
+'''git clone https://github.com/kukosek/rpi-stalkerbot.git''
+'''cd rpi-stalkerbot'''
 
 ### Setting it up
-Edit the file ''server.properties''
+Edit the file '''server.properties'''
 
 ## Running it
-''cd rpi-stalkerbot''
-''python3 rpi_stalkerbot_server.py''
+'''cd rpi-stalkerbot'''
+'''python3 rpi_stalkerbot_server.py'''
 Then type the IP adress of your rpi into a browser.
