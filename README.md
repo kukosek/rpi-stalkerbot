@@ -1,5 +1,6 @@
 # rpi-stalkerbot
 A web interface that allows you to control your raspberry pi robot
+![It should look like this](https://raw.githubusercontent.com/kukosek/rpi-stalkerbot/master/obrazek.png)
 
 ## Features
  * Control your robot with buttons or keyboard arrow keys
