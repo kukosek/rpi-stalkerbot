@@ -42,3 +42,4 @@ Then type the IP adress of your rpi into a browser.
 
 ## TODOs
  * telemetry of wifi signal
+ * responsive move servo rotation directions (now it is hardcoded just for my robot)
